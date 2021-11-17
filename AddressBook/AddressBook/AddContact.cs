@@ -23,12 +23,24 @@ namespace AddressBook
             }
 
         }
+        public void DeleteContact(string username)
+        {
+            foreach (var contact in addressbook)
+            {
+                if (contact.firstName == username || contact.lastName == username)
+                {
+                    addressbook.Remove(contact);
+                }
+            }
+
+        }
         public void Display()
         {
             foreach (var contact in addressbook)
             {
                 Console.WriteLine(contact.firstName + "" + contact.lastName + "" + contact.address + "" + contact.city + "" + contact.state + "" + contact.zip + "" + contact.phoneNumber + "" + contact.email);
             }
+            
         }
        
     }

@@ -13,7 +13,7 @@ namespace AddressBook
             while (flag)
             {
                 Console.WriteLine("Welcome to Address Book");
-                Console.WriteLine("Enter what you want to do : 1. Create Contacts ,2.Add Contact,3.Edit contact,4.Exit");
+                Console.WriteLine("Enter what you want to do : 1. Create Contacts ,2.Add Contact,3.Edit contact,4.DeleteContacct,5.Exit");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -58,8 +58,22 @@ namespace AddressBook
                         add.EditContact(name);
                         add.Display();
                         break;
-
                     case 4:
+                        Console.WriteLine("enter what is to be deleted");
+                        contact.firstName = Console.ReadLine();
+                        contact.lastName = Console.ReadLine();
+                        contact.address = Console.ReadLine();
+                        contact.city = Console.ReadLine();
+                        contact.state = Console.ReadLine();
+                        contact.zip = Console.ReadLine();
+                        contact.phoneNumber = Console.ReadLine();
+                        contact.email = Console.ReadLine();
+                        string username = Convert.ToString(Console.ReadLine());
+                        add.DeleteContact(username);
+                        add.Display();
+                        break;
+
+                    case 5:
                         flag = false;
                         break;
                 }

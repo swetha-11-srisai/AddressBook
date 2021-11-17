@@ -13,7 +13,7 @@ namespace AddressBook
             while (flag)
             {
                 Console.WriteLine("Welcome to Address Book");
-                Console.WriteLine("Enter what you want to do : 1. Create Contacts ,2.Add Contact,3.Edit contact,4.DeleteContacct,5.Exit");
+                Console.WriteLine("Enter what you want to do : 1. Create Contacts ,2.Add Contact,3.Edit contact,4.DeleteContacct,5.Add unique name,6.Exit");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -72,8 +72,15 @@ namespace AddressBook
                         add.DeleteContact(username);
                         add.Display();
                         break;
-
                     case 5:
+                        Console.WriteLine("add unique name to the address book");
+                        string nam = Convert.ToString(Console.ReadLine());
+                        add.AddUniqueContact(nam);
+                        add.DisplayUniqueContacts();
+                        break;
+
+
+                    case 6:
                         flag = false;
                         break;
                 }

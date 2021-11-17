@@ -12,7 +12,17 @@ namespace AddressBook
         {
             addressbook.Add(contact);
         }
-      
+        public void EditContact(string name)
+        {
+            foreach (var contact in addressbook)
+            {
+                if (contact.firstName == name || contact.lastName == name)
+                {
+                    Console.WriteLine("contacts will be edited");
+                }
+            }
+
+        }
         public void Display()
         {
             foreach (var contact in addressbook)

@@ -13,7 +13,7 @@ namespace AddressBook
             while (flag)
             {
                 Console.WriteLine("Welcome to Address Book");
-                Console.WriteLine("Enter what you want to do : 1. Create Contacts ,2.Add Contact,3.Exit");
+                Console.WriteLine("Enter what you want to do : 1. Create Contacts ,2.Add Contact,3.Edit contact,4.Exit");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -44,8 +44,22 @@ namespace AddressBook
                         add.AddConctact(contact);
                         add.Display();
                         break;
-                   
                     case 3:
+                        Console.WriteLine("enter what is to be edited");
+                        contact.firstName = Console.ReadLine();
+                        contact.lastName = Console.ReadLine();
+                        contact.address = Console.ReadLine();
+                        contact.city = Console.ReadLine();
+                        contact.state = Console.ReadLine();
+                        contact.zip = Console.ReadLine();
+                        contact.phoneNumber = Console.ReadLine();
+                        contact.email = Console.ReadLine();
+                        string name = Convert.ToString(Console.ReadLine());
+                        add.EditContact(name);
+                        add.Display();
+                        break;
+
+                    case 4:
                         flag = false;
                         break;
                 }
